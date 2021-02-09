@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Blogs/controller.dart';
+import 'package:flutter_application_1/CreatePost/controller.dart';
+import 'package:flutter_application_1/SignUp/controller.dart';
+
+// import './SignUp/controller.dart';
 
 void main() {
   runApp(MyApp());
@@ -8,111 +13,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Blogging',
+      title: 'Blogging App',
       theme: ThemeData(
-        primarySwatch: Colors.green,
+        primarySwatch: Colors.blueGrey,
       ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFFee9411),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(
-                  width: 50,
-                  color: Color(0x00000000),
-                ),
-              ),
-              child: Text(
-                'Blogging',
-                style: TextStyle(
-                  fontSize: 50.0,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            Form(
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        width: 2,
-                        color: Colors.white,
-                      ),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
-                      ),
-                      color: Color(0x00000000),
-                    ),
-                    margin: EdgeInsets.only(
-                      left: 30,
-                      right: 30,
-                    ),
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        hintText: 'Full Name',
-                      ),
-                    ),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Valid Email',
-                    ),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Password',
-                    ),
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Confirm password',
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(90),
-                ),
-                color: Colors.white,
-              ),
-              padding: EdgeInsets.only(left: 100, right:100),
-              child: FlatButton(
-                onPressed: () {},
-                child: Text('Sign Up'),
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('Already have an account'),
-                InkWell(
-                  child: Text('Sign in'),
-                  onTap: () {},
-                )
-              ],
-            ),
-          ],
-        ),
-      ),
+      home: SignUpPage(),
+      // home: CreatePostPage(),
+      // home: YourBlogsPage(),
     );
   }
 }
